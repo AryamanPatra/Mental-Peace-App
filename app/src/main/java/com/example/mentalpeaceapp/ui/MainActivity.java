@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.example.mentalpeaceapp.R;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -30,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+//        This will start python
+        if(!Python.isStarted()){
+            Python.start(new AndroidPlatform(this));
+        }
+//        now create python instance
+        Python py = Python.getInstance();
+        PyObject pyObj = py.getModule("Jarvis");
+        PyObject obj = pyObj.callAttr("main");
 
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
