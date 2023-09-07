@@ -4,6 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/c3"
     tools:context=".ui.ReadingTherapyActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/alfa_slab_one"
+                android:gravity="center"
+                android:padding="17dp"
+                android:text="Motivational Quotes"
+                android:textColor="@color/c2"
+                android:textSize="40dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Inspirational Quotes"
+
+                android:fontFamily="@font/alata"
+ android:padding="11dp"               android:textColor="@color/c1"
+                android:textSize="30dp" />
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/motivationalCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="carousel" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Stress-relieving Quotes"
+
+                android:fontFamily="@font/alata"
+                android:padding="11dp"               android:textColor="@color/c1"
+                android:textSize="30dp" />
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/inspirartionalCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="carousel" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
